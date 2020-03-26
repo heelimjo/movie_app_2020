@@ -8,8 +8,14 @@ import "./Movie.css";
 function Movie( {id, title, synopsis, poster, genres}){
 return ( 
     <div className="Movie">
-
-    <Link
+    
+   
+        <div className="Movie__Column">
+          <MoviePoster poster={poster} alt={title} />
+        </div>
+        <div className="Movie__Column">
+        
+        <Link
         to={{
             pathname: `/movie/${id}`,
             state:{
@@ -19,14 +25,11 @@ return (
                 genres
             }
 
-        }}
-    >
-   
-        <div className="Movie__Column">
-          <MoviePoster poster={poster} alt={title} />
-        </div>
-        <div className="Movie__Column">
+        }}>
+
             <h1>{title}</h1>
+            
+        </Link>
             <div className="Movie__Genres">
                  {genres.map((genre, index) => <MovieGenre genre={genre} key={index} />)}
             </div>
@@ -36,7 +39,7 @@ return (
 
              </div>
         </div>
-        </Link>
+      
     </div>
    
  );
