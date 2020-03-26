@@ -12,6 +12,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-lines-ellipsis": "^0.14.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0"
   },
   "scripts": {
@@ -19,7 +20,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build -r https://github.com/heelimjo/movie_app_2020",
     "predeploy": "npm run build"
   },
   "eslintConfig": {
@@ -37,6 +38,5 @@
       "last 1 safari version"
     ]
   },
-
-    "homepage": "https://heelimjo.github.io/movie_app_2020/"
+  "homepage": "https://heelimjo.github.io/movie_app_2020/"
 }

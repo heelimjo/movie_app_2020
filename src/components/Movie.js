@@ -1,12 +1,27 @@
 import React from "react";
 import PropTypes from "prop-types";
+import {Link} from "react-router-dom";
 import "./Movie.css";
-import LinesEllipsis from 'react-lines-ellipsis';
+
 
 //movie컴포넌트는 state가 필요하지 않아서 class대신 function으로 함
-function Movie( {title, synopsis, poster, genres}){
+function Movie( {id, title, synopsis, poster, genres}){
 return ( 
     <div className="Movie">
+
+    <Link
+        to={{
+            pathname: `/movie/${id}`,
+            state:{
+                title,
+                synopsis,
+                poster,
+                genres
+            }
+
+        }}
+    >
+   
         <div className="Movie__Column">
           <MoviePoster poster={poster} alt={title} />
         </div>
@@ -16,18 +31,14 @@ return (
                  {genres.map((genre, index) => <MovieGenre genre={genre} key={index} />)}
             </div>
              <div className="Movie__Synopsis">
-                 {/* <LinesEllipsis 
-                    text={synopsis}
-                    maxLine='2'
-                    ellipsis="..."
-                    trimRight
-                    basedOn='letters'
-                 /> */}
+                
                     {synopsis.slice(0, 140)}...
 
              </div>
         </div>
+        </Link>
     </div>
+   
  );
 }
 

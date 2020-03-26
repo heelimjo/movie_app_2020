@@ -1,14 +1,14 @@
 .Movie{
 
     background-color: white;
+    margin-top:20px;
     width: 40%;
     display: flex;
     justify-content: center;
     align-items:flex-start;
     flex-wrap: wrap;
     margin-bottom:50px;
-   
-    padding:0 20px;
+    padding:15px 30px 30px;
     box-shadow: 0 8px 38px rgba(133, 133, 133, 0.3), 0 5px 12px rgba(133, 133, 133,0.22);
 }
 
